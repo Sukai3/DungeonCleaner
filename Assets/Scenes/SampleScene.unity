@@ -7049,6 +7049,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: wallpoint
       objectReference: {fileID: 0}
+    - target: {fileID: 6316121474248094063, guid: be53dfebc1c88774fbad06534d02a018, type: 3}
+      propertyPath: iti
+      value: 2
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
