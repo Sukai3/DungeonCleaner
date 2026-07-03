@@ -1,0 +1,188 @@
+using UnityEditor;
+using UnityEngine;
+
+public class player : MonoBehaviour
+{
+    float posx = 0;
+    float posy=0;
+    public float speedX = 0.02f;
+    public float speedY=0.02f;
+    public float speedX2 = 0.02f;
+    public float speedY2 = 0.02f;
+    bool x=false;
+    bool y=false;
+    public static bool wallright = false;
+    public static bool wallleft = false;
+    public static bool wallup = false;
+    public static bool walldown = false;
+    public static int position=0;
+    public GameObject[] point;
+    public int kakuninn;
+    private float horizontal;
+    public static GameObject hit;
+    public  GameObject hitkakunin;
+    public static bool objright = false;
+    public static bool objleft = false;
+    public static bool objup = false;
+    public static bool objdown = false;
+    public bool objkakuninR = false;
+    // Start is called once before the first execution of Update after the MonoBehaviour is created
+    void Start()
+    {
+        wallright = false;
+        wallleft = false;
+        wallup = false;
+        walldown = false;
+        transform.position = point[position].transform.position;
+        hit = null;
+    }
+
+    // Update is called once per frame
+    void Update()
+    {
+        Move();
+        hitkakunin = hit;
+        objkakuninR = wallright;
+    }
+
+    void Move()
+    {
+        if (Input.GetAxis("Horizontal") <0)
+        {
+            
+            kakuninn = -1;
+        }
+        if (Input.GetAxis("Horizontal") >0)
+        {
+            kakuninn = 1;
+        }
+        if (Input.GetAxis("Horizontal") > -0.3&& Input.GetAxis("Horizontal") < 0.3)
+        {
+            kakuninn = 0;
+        }
+
+
+
+        if (Input.GetKey(KeyCode.LeftArrow) && !y)
+        {
+            speedX = -speedX2;
+            if (wallright || objright)
+                speedX = 0;
+
+        }
+        if (Input.GetKey(KeyCode.RightArrow) && !y)
+        {
+            speedX = speedX2;
+            if (wallleft || objleft)
+                speedX = 0;
+
+        }
+        if (Input.GetKey(KeyCode.RightArrow) && !y || (Input.GetKey(KeyCode.LeftArrow)) && !y)
+        {
+            x = true;
+        }
+        else { x = false; speedX = 0; }
+        if (Input.GetKey(KeyCode.UpArrow) && !x)
+        {
+            speedY = speedY2;
+            y = true;
+            if (walldown||objdown)
+                speedY = 0;
+
+        }
+        if (Input.GetKey(KeyCode.DownArrow) && !x)
+        {
+            speedY = -speedY2;
+            y = true;
+            if (wallup||objup)
+                speedY = 0;
+
+        }
+        if (Input.GetKey(KeyCode.UpArrow) && !x || (Input.GetKey(KeyCode.DownArrow)) && !x)
+            y = true;
+        else { y = false; speedY = 0; }
+        //transform.position = new Vector3(posx, posy, 0);
+        transform.Translate(new Vector3(speedX, speedY, 0) * Time.deltaTime);
+    }
+    private void OnTriggerStay2D(Collider2D collision)
+    {
+        
+        if (collision.gameObject.CompareTag("wallright") && hit != collision.gameObject)
+            wallright = true;
+        if (collision.gameObject.CompareTag("wallleft") && hit != collision.gameObject )
+            wallleft = true;
+        if (collision.gameObject.CompareTag("wallup") && hit != collision.gameObject   )
+            wallup = true;
+        if (collision.gameObject.CompareTag("walldown") && hit != collision.gameObject )
+            walldown = true;
+
+       
+
+    }
+    //private void OnTriggerEnter2D(Collider2D collision)
+    //{
+
+        
+    //    if (collision.gameObject.CompareTag("tukami") && hit == null)
+    //    {
+    //        hit = collision.gameObject;
+    //    }
+    //}
+
+    void OnTriggerExit2D(Collider2D collision)
+    {
+       
+        if (collision.gameObject.CompareTag("wallright") && hit != collision.gameObject)
+            wallright = false;
+        if (collision.gameObject.CompareTag("wallleft") && hit != collision.gameObject)
+            wallleft = false;
+        if (collision.gameObject.CompareTag("wallup") && hit != collision.gameObject)
+            wallup = false;
+        if (collision.gameObject.CompareTag("walldown") && hit != collision.gameObject)
+            walldown = false;
+
+
+       
+        //if (collision.gameObject.CompareTag("tukami"))
+        //{
+        //    hit = null;
+        //}
+
+    }
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.CompareTag("boxright"))
+            objright = true;
+        if (collision.gameObject.CompareTag("boxleft"))
+            objleft = true;
+        if (collision.gameObject.CompareTag("boxup"))
+            objup = true;
+        if (collision.gameObject.CompareTag("boxdown"))
+            objdown = true;
+    }
+
+
+    //    if (collision.gameObject.CompareTag("tukami") && hit == null)
+    //    {
+    //        hit = collision.gameObject;
+    //    }
+
+    //}
+    private void OnCollisionExit2D(Collision2D collision)
+    {
+        if (collision.gameObject.CompareTag("boxright"))
+            objright = false;
+        if (collision.gameObject.CompareTag("boxleft"))
+            objleft = false;
+        if (collision.gameObject.CompareTag("boxup"))
+            objup = false;
+        if (collision.gameObject.CompareTag("boxdown"))
+            objdown = false;
+    }
+
+        //    if (collision.gameObject.CompareTag("tukami"))
+        //    {
+        //        hit = null;
+        //    }
+        //}
+    }
