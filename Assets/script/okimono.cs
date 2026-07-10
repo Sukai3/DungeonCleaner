@@ -6,6 +6,8 @@ public class okimono : MonoBehaviour
     public GameObject goal;
     private bool setti=false;
     public bool hantei=false;
+    private int scene; 
+       
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -15,7 +17,12 @@ public class okimono : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(setti)
+        scene = flag.scene;
+        if (flag.clear[scene])
+            setti = true;
+
+
+        if (setti)
             transform.position = goal.transform.position;
         
 

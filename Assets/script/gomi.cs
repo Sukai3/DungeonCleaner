@@ -2,6 +2,8 @@ using UnityEngine;
 
 public class gomi : MonoBehaviour
 {
+    private int scene;
+   
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -11,7 +13,9 @@ public class gomi : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        scene = flag.scene;
+        if (flag.clear[scene])
+            Destroy(gameObject);
     }
     private void OnCollisionEnter2D(Collision2D collision)
     {

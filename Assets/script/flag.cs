@@ -11,17 +11,22 @@ public class flag : MonoBehaviour
     public static int scene=0;
     public int nowscene;
     public static int maxscene=40;
+    private static int a=0;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
         scene=nowscene;
+        if(a==0)
         clear = new bool[maxscene];
+        
+        
     }
 
     // Update is called once per frame
     void Update()
     {
+        a = 1;
         if (gomi==0 && okimono==0)
             clear[scene] = true;
         kakunin = clear[scene];

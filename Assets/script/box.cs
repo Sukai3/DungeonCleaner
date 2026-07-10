@@ -21,8 +21,7 @@ public class box : MonoBehaviour
 
     private bool hantei=false;
     private float timer = 0.0f;
-
-
+  
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
