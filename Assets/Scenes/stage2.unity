@@ -181,11 +181,6 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 9200900297481938855, guid: 793f83dc756c7e7428decd634a1f34f4, type: 3}
   m_PrefabInstance: {fileID: 2089013862}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &49227281 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 9200900297481938855, guid: 793f83dc756c7e7428decd634a1f34f4, type: 3}
-  m_PrefabInstance: {fileID: 1211875090}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &170540295
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -577,11 +572,6 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d348fddd11b475244a49c4bd65ca70f7, type: 3}
---- !u!1 &393296705 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 9200900297481938855, guid: 793f83dc756c7e7428decd634a1f34f4, type: 3}
-  m_PrefabInstance: {fileID: 170540295}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &550225805
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -697,7 +687,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3762551938194650114, guid: be53dfebc1c88774fbad06534d02a018, type: 3}
       propertyPath: scene
-      value: 6
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 5666945551168471024, guid: be53dfebc1c88774fbad06534d02a018, type: 3}
       propertyPath: m_Name
@@ -1049,11 +1039,11 @@ PrefabInstance:
     - target: {fileID: 9137689169306497588, guid: 427d4d97bda577b4894707cc8440417d, type: 3}
       propertyPath: 'point.Array.data[1]'
       value: 
-      objectReference: {fileID: 49227281}
+      objectReference: {fileID: 36165432}
     - target: {fileID: 9137689169306497588, guid: 427d4d97bda577b4894707cc8440417d, type: 3}
       propertyPath: 'point.Array.data[2]'
       value: 
-      objectReference: {fileID: 393296705}
+      objectReference: {fileID: 36165432}
     - target: {fileID: 9137689169306497588, guid: 427d4d97bda577b4894707cc8440417d, type: 3}
       propertyPath: 'point.Array.data[3]'
       value: 
@@ -2126,11 +2116,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2569555066270240700, guid: 793f83dc756c7e7428decd634a1f34f4, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 1.97
+      value: -7.84
       objectReference: {fileID: 0}
     - target: {fileID: 2569555066270240700, guid: 793f83dc756c7e7428decd634a1f34f4, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 3.32
+      value: -3.24
       objectReference: {fileID: 0}
     - target: {fileID: 2569555066270240700, guid: 793f83dc756c7e7428decd634a1f34f4, type: 3}
       propertyPath: m_LocalPosition.z
