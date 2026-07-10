@@ -2298,6 +2298,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4543117641549879053, guid: a1b09d6318d5f0242947e509e1ecc4d9, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: -5718277681721830605, guid: e3bf0ca319d0e824caa202aeddc2a68b, type: 3}
     - target: {fileID: 7830854386401601439, guid: a1b09d6318d5f0242947e509e1ecc4d9, type: 3}
       propertyPath: m_Name
       value: Wall des
