@@ -61,20 +61,20 @@ public class box : MonoBehaviour
         {
             if (yoko)
             {
-                if (Input.GetKey(KeyCode.LeftArrow) && !y)
+                if ((Input.GetKey(KeyCode.LeftArrow) && !y) || (player.stickX == -1 && !y))
                 {
                     speedX = -speedX2;
                     if (wallright || player.wallright||player.objleft)
                         speedX = 0;
 
                 }
-                if (Input.GetKey(KeyCode.RightArrow) && !y)
+                if ((Input.GetKey(KeyCode.RightArrow) && !y) || (player.stickX == 1 && !y))
                 {
                     speedX = speedX2;
                     if (wallleft || player.wallleft || player.objright)
                         speedX = 0; 
                 }
-                if (Input.GetKey(KeyCode.RightArrow) && !y || (Input.GetKey(KeyCode.LeftArrow)) && !y)
+                if ((Input.GetKey(KeyCode.RightArrow) && !y || (Input.GetKey(KeyCode.LeftArrow)) && !y) || (player.stickX != 0 && !y))
                 {
                     x = true;
                 }
@@ -85,21 +85,21 @@ public class box : MonoBehaviour
             if (tate) 
             {
 
-                if (Input.GetKey(KeyCode.UpArrow) && !x)
+                if ((Input.GetKey(KeyCode.UpArrow) && !x) || (player.stickY == 1 && !x))
                 {
                     speedY = speedY2;
                     y = true;
                     if (walldown || player.walldown || player.objup)
                         speedY = 0;
                 }
-                if (Input.GetKey(KeyCode.DownArrow) && !x)
+                if ((Input.GetKey(KeyCode.DownArrow) && !x) || (player.stickY == -1 && !x))
                 {
                     speedY = -speedY2;
                     y = true;
                     if (wallup || player.wallup || player.objdown)
                         speedY = 0;
                 }
-                if (Input.GetKey(KeyCode.UpArrow) && !x || (Input.GetKey(KeyCode.DownArrow)) && !x)
+                if ((Input.GetKey(KeyCode.UpArrow) && !x || (Input.GetKey(KeyCode.DownArrow)) && !x) || (player.stickY != 0 && !x))
                     y = true;
                 // else { y = false; speedY = 0; }
                 if(me)
@@ -109,7 +109,7 @@ public class box : MonoBehaviour
 
 
         }
-        if (Input.GetKeyUp(KeyCode.LeftShift))
+        if (Input.GetKeyUp(KeyCode.LeftShift) || Input.GetKey(KeyCode.JoystickButton0))
         {
             { x = false; speedX = 0; y = false; speedY = 0; }
         }

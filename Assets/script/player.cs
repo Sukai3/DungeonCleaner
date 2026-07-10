@@ -17,7 +17,8 @@ public class player : MonoBehaviour
     public static bool walldown = false;
     public static int position=0;
     public GameObject[] point;
-    public int kakuninn;
+    public static float stickX;
+    public static float stickY;
     private float horizontal;
     public static GameObject hit;
     public  GameObject hitkakunin;
@@ -47,42 +48,57 @@ public class player : MonoBehaviour
 
     void Move()
     {
-        if (Input.GetAxis("Horizontal") <0)
+        if (Input.GetAxis("Horizontal") <-0.5)//Vertical
         {
             
-            kakuninn = -1;
+            stickX = -1;
         }
-        if (Input.GetAxis("Horizontal") >0)
+        if (Input.GetAxis("Horizontal") >0.5)
         {
-            kakuninn = 1;
+            stickX = 1;
         }
-        if (Input.GetAxis("Horizontal") > -0.3&& Input.GetAxis("Horizontal") < 0.3)
+        if (Input.GetAxis("Horizontal") > -0.4&& Input.GetAxis("Horizontal") < 0.4)
         {
-            kakuninn = 0;
+            stickX = 0;
+        }
+
+
+        if (Input.GetAxis("Vertical") <-0.5)//Vertical
+        {
+            
+            stickY = -1;
+        }
+        if (Input.GetAxis("Vertical") >0.5)
+        {
+            stickY = 1;
+        }
+        if (Input.GetAxis("Vertical") > -0.4&& Input.GetAxis("Vertical") < 0.4)
+        {
+            stickY = 0;
         }
 
 
 
-        if (Input.GetKey(KeyCode.LeftArrow) && !y)
+        if ((Input.GetKey(KeyCode.LeftArrow) && !y)|| (stickX==-1 && !y))
         {
             speedX = -speedX2;
             if (wallright || objright)
                 speedX = 0;
 
         }
-        if (Input.GetKey(KeyCode.RightArrow) && !y)
+        if ((Input.GetKey(KeyCode.RightArrow) && !y) || (stickX==1 && !y))
         {
             speedX = speedX2;
             if (wallleft || objleft)
                 speedX = 0;
 
         }
-        if (Input.GetKey(KeyCode.RightArrow) && !y || (Input.GetKey(KeyCode.LeftArrow)) && !y)
+        if ((Input.GetKey(KeyCode.RightArrow) && !y || (Input.GetKey(KeyCode.LeftArrow)) && !y)||(stickX!=0&&!y))
         {
             x = true;
         }
         else { x = false; speedX = 0; }
-        if (Input.GetKey(KeyCode.UpArrow) && !x)
+        if ((Input.GetKey(KeyCode.UpArrow) && !x)||(stickY==1&&!x))
         {
             speedY = speedY2;
             y = true;
@@ -90,7 +106,7 @@ public class player : MonoBehaviour
                 speedY = 0;
 
         }
-        if (Input.GetKey(KeyCode.DownArrow) && !x)
+        if ((Input.GetKey(KeyCode.DownArrow) && !x) || (stickY == -1 && !x))
         {
             speedY = -speedY2;
             y = true;
@@ -98,7 +114,7 @@ public class player : MonoBehaviour
                 speedY = 0;
 
         }
-        if (Input.GetKey(KeyCode.UpArrow) && !x || (Input.GetKey(KeyCode.DownArrow)) && !x)
+        if ((Input.GetKey(KeyCode.UpArrow) && !x || (Input.GetKey(KeyCode.DownArrow)) && !x) || (stickY != 0 && !x))
             y = true;
         else { y = false; speedY = 0; }
         //transform.position = new Vector3(posx, posy, 0);
