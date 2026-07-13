@@ -14,10 +14,7 @@ public class box : MonoBehaviour
     public bool wallup = false;
     public bool walldown = false;
     
-    public bool down = false;
-    public bool right = false;
-    public bool left = false;
-    public bool up = false;
+ 
 
     Vector3 myt;
     Vector3 collt;
@@ -118,6 +115,7 @@ public class box : MonoBehaviour
         }
         else
             player.shift = false;
+
         if (Input.GetKeyUp(KeyCode.LeftShift) || Input.GetKey(KeyCode.JoystickButton0))
         {
             { x = false; speedX = 0; y = false; speedY = 0; }
