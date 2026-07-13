@@ -1,6 +1,6 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
-using UnityEngine.UIElements;
+
 
 public class flag : MonoBehaviour
 {
@@ -42,7 +42,7 @@ public class flag : MonoBehaviour
         }
         kakunin = clear[scene];
 
-        if (Input.GetKeyDown(KeyCode.R))
+        if (Input.GetKeyDown(KeyCode.R)|| Input.GetKeyDown(KeyCode.JoystickButton6))
             SceneManager.LoadScene("stage"+nowscene);
         //kakuninscene=scene; 
 

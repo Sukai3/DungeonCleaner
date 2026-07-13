@@ -1,7 +1,7 @@
-using Unity.VectorGraphics;
+//using Unity.VectorGraphics;
 using UnityEngine;
 using UnityEngine.SceneManagement;
-using UnityEngine.UIElements;
+//using UnityEngine.UIElements;
 
 public class point : MonoBehaviour
 {
