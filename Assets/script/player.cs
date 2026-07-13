@@ -27,7 +27,7 @@ public class player : MonoBehaviour
     public static bool objup = false;
     public static bool objdown = false;
     public bool objkakuninR = false;
-    private int cont = 1;
+    public static int cont = -1;
 
     public static bool right = false;
     public static bool left = false;

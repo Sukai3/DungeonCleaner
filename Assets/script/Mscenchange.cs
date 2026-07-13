@@ -16,8 +16,15 @@ public class Mscenchange : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(Input.GetKeyDown(KeyCode.Space)|| Input.GetKeyDown(KeyCode.JoystickButton0)|| Input.GetKeyDown(KeyCode.A))
+        if(Input.GetKeyDown(KeyCode.Space)|| Input.GetKeyDown(KeyCode.A))
         {
+            player.cont = 1;
+            player.position = test;
+            SceneManager.LoadScene(next);
+        }
+        if (Input.GetKeyDown(KeyCode.JoystickButton0)) 
+        {
+            player.cont = -1;
             player.position = test;
             SceneManager.LoadScene(next);
         }
