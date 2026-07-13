@@ -13,6 +13,12 @@ public class box : MonoBehaviour
     public bool wallleft = false;
     public bool wallup = false;
     public bool walldown = false;
+    
+    public bool down = false;
+    public bool right = false;
+    public bool left = false;
+    public bool up = false;
+
     Vector3 myt;
     Vector3 collt;
     private bool yoko = false;
@@ -57,14 +63,15 @@ public class box : MonoBehaviour
 
 
 
-        if (Input.GetKey(KeyCode.LeftShift) || Input.GetKey(KeyCode.JoystickButton0)) 
+        if (Input.GetKey(KeyCode.LeftShift) || Input.GetKey(KeyCode.JoystickButton0))
         {
+            player.shift = true;
             if (yoko)
             {
                 if ((Input.GetKey(KeyCode.LeftArrow) && !y) || (player.stickX == -1 && !y))
                 {
                     speedX = -speedX2;
-                    if (wallright || player.wallright||player.objleft)
+                    if (wallright || player.wallright || player.objleft)
                         speedX = 0;
 
                 }
@@ -72,17 +79,17 @@ public class box : MonoBehaviour
                 {
                     speedX = speedX2;
                     if (wallleft || player.wallleft || player.objright)
-                        speedX = 0; 
+                        speedX = 0;
                 }
                 if ((Input.GetKey(KeyCode.RightArrow) && !y || (Input.GetKey(KeyCode.LeftArrow)) && !y) || (player.stickX != 0 && !y))
                 {
                     x = true;
                 }
                 //else { x = false; speedX = 0; }
-                if(me)
-                transform.Translate(new Vector3(speedX, speedY, 0) * Time.deltaTime);
+                if (me)
+                    transform.Translate(new Vector3(speedX, speedY, 0) * Time.deltaTime);
             }
-            if (tate) 
+            if (tate)
             {
 
                 if ((Input.GetKey(KeyCode.UpArrow) && !x) || (player.stickY == 1 && !x))
@@ -102,13 +109,15 @@ public class box : MonoBehaviour
                 if ((Input.GetKey(KeyCode.UpArrow) && !x || (Input.GetKey(KeyCode.DownArrow)) && !x) || (player.stickY != 0 && !x))
                     y = true;
                 // else { y = false; speedY = 0; }
-                if(me)
-                transform.Translate(new Vector3(speedX, speedY, 0) * Time.deltaTime);
+                if (me)
+                    transform.Translate(new Vector3(speedX, speedY, 0) * Time.deltaTime);
 
             }
 
 
         }
+        else
+            player.shift = false;
         if (Input.GetKeyUp(KeyCode.LeftShift) || Input.GetKey(KeyCode.JoystickButton0))
         {
             { x = false; speedX = 0; y = false; speedY = 0; }
@@ -170,61 +179,7 @@ public class box : MonoBehaviour
                 player.objright = false;
         }
 
-        //    if (Input.GetKey(KeyCode.LeftShift))
-        //{
-        //    if (collision.gameObject.CompareTag("left") || collision.gameObject.CompareTag("right"))
-        //    {
-
-
-        //            if (Input.GetKey(KeyCode.LeftArrow) && !y)
-        //            {
-        //                speedX = -speedX2;
-        //            if(wallright|| player.wallright)
-        //                speedX = 0;
-
-        //            }
-        //            if (Input.GetKey(KeyCode.RightArrow) && !y )
-        //            {
-        //                speedX = speedX2;
-        //            if (wallleft || player.wallleft)
-        //                speedX= 0;
-        //            }
-        //            if (Input.GetKey(KeyCode.RightArrow) && !y || (Input.GetKey(KeyCode.LeftArrow)) && !y)
-        //            {
-        //                x = true;
-        //            }
-        //            //else { x = false; speedX = 0; }
-
-        //            transform.Translate(new Vector3(speedX, speedY, 0) * Time.deltaTime);
-
-        //    }
-
-        //    if ((collision.gameObject.CompareTag("down") || collision.gameObject.CompareTag("up")) )
-        //    {
-        //        if (Input.GetKey(KeyCode.UpArrow) && !x )
-        //        {
-        //            speedY = speedY2;
-        //            y = true;
-        //            if (walldown || player.walldown)
-        //                speedY = 0;
-        //        }
-        //        if (Input.GetKey(KeyCode.DownArrow) && !x)
-        //        {
-        //            speedY = -speedY2;
-        //            y = true;
-        //            if(wallup || player.wallup)
-        //                speedY= 0;
-        //        }
-        //        if (Input.GetKey(KeyCode.UpArrow) && !x || (Input.GetKey(KeyCode.DownArrow)) && !x)
-        //            y = true;
-        //        // else { y = false; speedY = 0; }
-        //        transform.Translate(new Vector3(speedX, speedY, 0) * Time.deltaTime);
-        //    }
-        //    // else { y = false; speedY = 0; }
-
-
-        //}
-
+        
         if (player.hit == null)
         {
             if (collision.gameObject.CompareTag("down") || collision.gameObject.CompareTag("up") || collision.gameObject.CompareTag("left") || collision.gameObject.CompareTag("right"))
@@ -245,11 +200,14 @@ public class box : MonoBehaviour
 
             if (collision.gameObject.CompareTag("left"))
             {
+                player.left = true;
+
                 if (me)
                     player.objleft = false;
             }
             else
             {
+                player.right = true;
                 if (me)
                     player.objright = false;
             }
@@ -259,11 +217,13 @@ public class box : MonoBehaviour
             tate = true;
             if (collision.gameObject.CompareTag("down"))
             {
+                player.down = true;
                 if (me)
                     player.objdown = false;
             }
             else
             {
+                player.up = true;
                 if (me)
                     player.objup = false ;
             }
@@ -305,9 +265,25 @@ public class box : MonoBehaviour
 
 
         if (collision.gameObject.CompareTag("left") || collision.gameObject.CompareTag("right"))
+        {
             yoko = false;
-        if ((collision.gameObject.CompareTag("down") || collision.gameObject.CompareTag("up")))
-            tate = false;
+            if (collision.gameObject.CompareTag("left"))
+            {
+                player.left = false;
+            }
+            else
+                player.right = false;
 
+        }
+        if ((collision.gameObject.CompareTag("down") || collision.gameObject.CompareTag("up")))
+        {
+            tate = false;
+            if (collision.gameObject.CompareTag("down"))
+            {
+                player.down = false;
+            }
+            else
+                player.up = false;
+        }
     }
 }

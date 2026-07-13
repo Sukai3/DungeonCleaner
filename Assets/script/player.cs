@@ -29,11 +29,18 @@ public class player : MonoBehaviour
     public bool objkakuninR = false;
     private int cont = 1;
 
+    public static bool right = false;
+    public static bool left = false;
+    public static bool up = false;
+    public static bool down = false;
+    public static bool shift;
+
     private Animator anim;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
+        shift = false;
         anim = gameObject.GetComponent<Animator>();
         wallright = false;
         wallleft = false;
@@ -98,10 +105,13 @@ public class player : MonoBehaviour
 
         if ((Input.GetKey(KeyCode.LeftArrow) && !y)|| (stickX==-1 && !y))
         {
-            anim.SetBool("left", true);
-            anim.SetBool("up", false);
-            anim.SetBool("down", false);
-            anim.SetBool("right", false);
+            if (!right)
+            {
+                anim.SetBool("left", true);
+                anim.SetBool("up", false);
+                anim.SetBool("down", false);
+                anim.SetBool("right", false);
+            }
             speedX = -speedX2;
             if (wallright || objright)
                 speedX = 0;
@@ -109,10 +119,13 @@ public class player : MonoBehaviour
         }
         if ((Input.GetKey(KeyCode.RightArrow) && !y) || (stickX==1 && !y))
         {
-            anim.SetBool("left", false);
-            anim.SetBool("up", false);
-            anim.SetBool("down", false);
-            anim.SetBool("right", true);
+            if (!left)
+            {
+                anim.SetBool("left", false);
+                anim.SetBool("up", false);
+                anim.SetBool("down", false);
+                anim.SetBool("right", true);
+            }
             speedX = speedX2;
             if (wallleft || objleft)
                 speedX = 0;
@@ -122,14 +135,17 @@ public class player : MonoBehaviour
         {
             x = true;
         }
-        else { x = false; speedX = 0; }
+        else { x = false; speedX = 0; anim.SetBool("left", false); anim.SetBool("right", false); }
         if ((Input.GetKey(KeyCode.UpArrow) && !x)||(stickY==1&&!x))
         {
-            anim.SetBool("left", false);
-            anim.SetBool("up", true);
-            anim.SetBool("down", false);
-            anim.SetBool("right", false);
-            speedY = speedY2;
+            if (!down)
+            {
+                anim.SetBool("left", false);
+                anim.SetBool("up", true);
+                anim.SetBool("down", false);
+                anim.SetBool("right", false);
+            }
+                speedY = speedY2;
             y = true;
             if (walldown||objdown)
                 speedY = 0;
@@ -137,10 +153,13 @@ public class player : MonoBehaviour
         }
         if ((Input.GetKey(KeyCode.DownArrow) && !x) || (stickY == -1 && !x))
         {
-            anim.SetBool("left", false);
-            anim.SetBool("up", false);
-            anim.SetBool("down", true);
-            anim.SetBool("right", false);
+            if (!up)
+            {
+                anim.SetBool("left", false);
+                anim.SetBool("up", false);
+                anim.SetBool("down", true);
+                anim.SetBool("right", false);
+            }
             speedY = -speedY2;
             y = true;
             if (wallup||objup)
@@ -149,7 +168,7 @@ public class player : MonoBehaviour
         }
         if ((Input.GetKey(KeyCode.UpArrow) && !x || (Input.GetKey(KeyCode.DownArrow)) && !x) || (stickY != 0 && !x))
             y = true;
-        else { y = false; speedY = 0; }
+        else { y = false; speedY = 0; anim.SetBool("down", false); anim.SetBool("up", false); }
         //transform.position = new Vector3(posx, posy, 0);
         transform.Translate(new Vector3(speedX, speedY, 0) * Time.deltaTime);
     }
