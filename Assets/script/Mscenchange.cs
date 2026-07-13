@@ -8,7 +8,9 @@ public class Mscenchange : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        
+        flag.a = 0;
+        flag.b = 0;
+        flag.timer = 0;
     }
 
     // Update is called once per frame
