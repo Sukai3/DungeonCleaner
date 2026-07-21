@@ -4665,6 +4665,22 @@ PrefabInstance:
       propertyPath: 'point.Array.data[4]'
       value: 
       objectReference: {fileID: 89797844}
+    - target: {fileID: 6473800293080950573, guid: 89df38c57599e254db5f82357f6fffe4, type: 3}
+      propertyPath: m_Size.x
+      value: 3.5093982
+      objectReference: {fileID: 0}
+    - target: {fileID: 6473800293080950573, guid: 89df38c57599e254db5f82357f6fffe4, type: 3}
+      propertyPath: m_Size.y
+      value: 4.399156
+      objectReference: {fileID: 0}
+    - target: {fileID: 6473800293080950573, guid: 89df38c57599e254db5f82357f6fffe4, type: 3}
+      propertyPath: m_Offset.x
+      value: 0.21964538
+      objectReference: {fileID: 0}
+    - target: {fileID: 6473800293080950573, guid: 89df38c57599e254db5f82357f6fffe4, type: 3}
+      propertyPath: m_Offset.y
+      value: 0.18828607
+      objectReference: {fileID: 0}
     - target: {fileID: 7858171101518938245, guid: 89df38c57599e254db5f82357f6fffe4, type: 3}
       propertyPath: m_LocalPosition.x
       value: -6.970512
