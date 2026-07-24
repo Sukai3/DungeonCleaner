@@ -24,19 +24,26 @@ public class box : MonoBehaviour
 
     private bool hantei=false;
     private float timer = 0.0f;
-  
+
+    public AudioClip sound1;
+    AudioSource audioSource;
+
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        
+        audioSource = GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
     void Update()
     {
 
-        if(player.hit==gameObject)
+        if (speedX != 0 || speedY != 0)
+            audioSource.PlayOneShot(sound1);
+
+
+        if (player.hit==gameObject)
             me = true;
         else
             me= false;

@@ -1,4 +1,5 @@
 //using UnityEditor;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class player : MonoBehaviour
@@ -40,6 +41,9 @@ public class player : MonoBehaviour
 
     private Animator anim;
 
+    public AudioClip sound1;
+    AudioSource audioSource;
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -51,6 +55,8 @@ public class player : MonoBehaviour
         walldown = false;
         transform.position = point[position].transform.position;
         hit = null;
+
+        audioSource = GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
@@ -67,6 +73,8 @@ public class player : MonoBehaviour
         else
             anim.SetBool("taiki", false);
 
+        if (Input.GetKey(KeyCode.LeftShift) || Input.GetKey(KeyCode.JoystickButton0))
+            audioSource.PlayOneShot(sound1);
     }
 
     void Move()

@@ -1,4 +1,6 @@
+using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.Audio;
 using UnityEngine.SceneManagement;
 
 
@@ -19,15 +21,18 @@ public class flag : MonoBehaviour
     public float time=3;
     public int max=5;
 
+    public AudioClip soundgomi;
+    public AudioClip soundoki;
+    AudioSource audioSource;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
         scene=nowscene;
         if(a==0)
         clear = new bool[maxscene];
-        
-      
-        
+        audioSource = GetComponent<AudioSource>();
+
+
     }
 
     // Update is called once per frame
@@ -58,10 +63,12 @@ public class flag : MonoBehaviour
         if (collision.gameObject.CompareTag("gomi"))
         {
             gomi--;
+            audioSource.PlayOneShot(soundgomi);
         }
         if (collision.gameObject.CompareTag("okimono"))
         {
             okimono--;
+            audioSource.PlayOneShot(soundoki);
         }
 
     }
