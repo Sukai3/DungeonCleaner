@@ -24,6 +24,8 @@ public class box : MonoBehaviour
 
     private bool hantei=false;
     private float timer = 0.0f;
+    private float timersou = 0.0f;
+    public float timesou = 2.0f;
 
     public AudioClip sound1;
     AudioSource audioSource;
@@ -38,9 +40,16 @@ public class box : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
+        timersou += Time.deltaTime;
         if (speedX != 0 || speedY != 0)
-            audioSource.PlayOneShot(sound1);
+        {
+            
+            if (timesou < timersou)
+            {
+                audioSource.PlayOneShot(sound1);
+                timersou = 0;
+            }
+        }
 
 
         if (player.hit==gameObject)

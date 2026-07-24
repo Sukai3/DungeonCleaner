@@ -73,7 +73,7 @@ public class player : MonoBehaviour
         else
             anim.SetBool("taiki", false);
 
-        if (Input.GetKey(KeyCode.LeftShift) || Input.GetKey(KeyCode.JoystickButton0))
+        if (Input.GetKeyDown(KeyCode.LeftShift) || Input.GetKeyDown(KeyCode.JoystickButton0))
             audioSource.PlayOneShot(sound1);
     }
 

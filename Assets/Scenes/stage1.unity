@@ -1387,6 +1387,10 @@ PrefabInstance:
       propertyPath: sound1
       value: 
       objectReference: {fileID: 8300000, guid: 84ffd2f021f58a74b965f8f3d169114c, type: 3}
+    - target: {fileID: 2924781325065679215, guid: 4234ad88d8e9c1046844bd697e315ef2, type: 3}
+      propertyPath: timesou
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 5392902888735127818, guid: 4234ad88d8e9c1046844bd697e315ef2, type: 3}
       propertyPath: m_SpriteTilingProperty.oldSize.x
       value: 1.51
@@ -1657,6 +1661,10 @@ PrefabInstance:
       propertyPath: sound1
       value: 
       objectReference: {fileID: 8300000, guid: 84ffd2f021f58a74b965f8f3d169114c, type: 3}
+    - target: {fileID: 2924781325065679215, guid: 4234ad88d8e9c1046844bd697e315ef2, type: 3}
+      propertyPath: timesou
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 5392902888735127818, guid: 4234ad88d8e9c1046844bd697e315ef2, type: 3}
       propertyPath: m_SpriteTilingProperty.oldSize.x
       value: 1.55
@@ -3388,6 +3396,10 @@ PrefabInstance:
       propertyPath: sound1
       value: 
       objectReference: {fileID: 8300000, guid: 84ffd2f021f58a74b965f8f3d169114c, type: 3}
+    - target: {fileID: 5423164480398161681, guid: d348fddd11b475244a49c4bd65ca70f7, type: 3}
+      propertyPath: timesou
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 8330856057544441112, guid: d348fddd11b475244a49c4bd65ca70f7, type: 3}
       propertyPath: m_SpriteTilingProperty.oldSize.x
       value: 1.5
@@ -3990,6 +4002,10 @@ PrefabInstance:
       propertyPath: sound1
       value: 
       objectReference: {fileID: 8300000, guid: 84ffd2f021f58a74b965f8f3d169114c, type: 3}
+    - target: {fileID: 2924781325065679215, guid: 4234ad88d8e9c1046844bd697e315ef2, type: 3}
+      propertyPath: timesou
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 5392902888735127818, guid: 4234ad88d8e9c1046844bd697e315ef2, type: 3}
       propertyPath: m_SpriteTilingProperty.oldSize.x
       value: 1.51
