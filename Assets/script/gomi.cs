@@ -3,6 +3,7 @@ using UnityEngine;
 public class gomi : MonoBehaviour
 {
     private int scene;
+    public bool sonota;
    
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -19,12 +20,16 @@ public class gomi : MonoBehaviour
     }
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.gameObject.CompareTag("fire"))
+        if (collision.gameObject.CompareTag("fire")&&!sonota)
+            Destroy(gameObject);
+        if (collision.gameObject.CompareTag("sonotafire") && sonota)
             Destroy(gameObject);
     }
     private void OnTriggerEnter2D(Collider2D collision) 
     {
-        if (collision.gameObject.CompareTag("fire"))
+        if (collision.gameObject.CompareTag("fire")&&!sonota)
+            Destroy(gameObject);
+        if (collision.gameObject.CompareTag("sonotafire") && sonota)
             Destroy(gameObject);
     }
     

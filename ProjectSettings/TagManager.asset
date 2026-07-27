@@ -25,6 +25,7 @@ TagManager:
   - boxleft
   - boxup
   - boxdown
+  - sonotafire
   layers:
   - Default
   - TransparentFX
