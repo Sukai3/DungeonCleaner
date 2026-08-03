@@ -19,7 +19,7 @@ public class flag : MonoBehaviour
     private  int i=0;
     public static float timer=0;
     public float time=3;
-    private int max=7;
+    public int max=7;
 
     public AudioClip soundgomi;
     public AudioClip soundoki;
