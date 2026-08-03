@@ -67,8 +67,11 @@ public class flag : MonoBehaviour
         }
         if (collision.gameObject.CompareTag("okimono"))
         {
-            okimono--;
-            audioSource.PlayOneShot(soundoki);
+            if (clear[scene])
+            {
+                okimono--;
+                audioSource.PlayOneShot(soundoki);
+            }
         }
 
     }
