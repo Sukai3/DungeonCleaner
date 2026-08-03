@@ -263,7 +263,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c9f31b7c8231f3e4c99d4fbd841f85ce, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Mscenchange
-  next: stage5
+  next: stage11
   test: 0
 --- !u!212 &530692282
 SpriteRenderer:
