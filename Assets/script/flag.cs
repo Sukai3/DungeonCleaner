@@ -1,6 +1,4 @@
-using Unity.VisualScripting;
 using UnityEngine;
-using UnityEngine.Audio;
 using UnityEngine.SceneManagement;
 
 
@@ -67,7 +65,7 @@ public class flag : MonoBehaviour
         }
         if (collision.gameObject.CompareTag("okimono"))
         {
-            if (clear[scene])
+            if (!clear[scene])
             {
                 okimono--;
                 audioSource.PlayOneShot(soundoki);
