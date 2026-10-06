@@ -1,3 +1,4 @@
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class waku : MonoBehaviour
@@ -27,9 +28,10 @@ public class waku : MonoBehaviour
                 anim.SetBool("Hbox",false);
                 anim.SetBool("Boxb",false);
                 anim.SetBool("Takarab",false);
+                anim.SetBool("Enptyb",false);
              
             }
-
+            
         }
         
         for (int i = 0; i < hasonbox.Length; i++)
@@ -37,11 +39,12 @@ public class waku : MonoBehaviour
             if (hasonbox[i] == player.hit)
             {
                 //anime
-                anim.SetTrigger("Hbox");
+                //anim.SetTrigger("Hbox");
                 anim.SetBool("Gaikotub", false);
-                anim.SetBool("Hbox", true);
+                anim.SetBool("Hboxb", true);
                 anim.SetBool("Boxb", false);
                 anim.SetBool("Takarab", false);
+                anim.SetBool("Enptyb", false);
             }
         }
         for (int i = 0; i < box.Length; i++)
@@ -51,9 +54,10 @@ public class waku : MonoBehaviour
                 //anime
                 anim.SetTrigger("Box");
                 anim.SetBool("Gaikotub", false);
-                anim.SetBool("Hbox", false);
+                anim.SetBool("Hboxb", false);
                 anim.SetBool("Boxb", true);
                 anim.SetBool("Takarab", false);
+                anim.SetBool("Enptyb", false);
             }
         }
        
@@ -64,22 +68,28 @@ public class waku : MonoBehaviour
                     //anime
                     anim.SetTrigger("takara");
                 anim.SetBool("Gaikotub", false);
-                anim.SetBool("Hbox", false);
+                anim.SetBool("Hboxb", false);
                 anim.SetBool("Boxb", false);
                 anim.SetBool("Takarab", true);
+                anim.SetBool("Enptyb", false);
             }
             }
-        
-        if (player.hit == null) 
+
+        if (player.hit == null)
         {
             //anime
-            anim.SetTrigger("empty");
+            //  anim.SetTrigger("empty");
+            GetComponent<SpriteRenderer>().enabled = false;
             anim.SetBool("Gaikotub", false);
-            anim.SetBool("Hbox", false);
+            anim.SetBool("Hboxb", false);
             anim.SetBool("Boxb", false);
             anim.SetBool("Takarab", false);
+            anim.SetBool("Enptyb", true);
         }
         else
-        transform.position = player.hit.transform.position;
+        {
+            GetComponent<SpriteRenderer>().enabled = true;
+            transform.position = player.hit.transform.position;
+        }
     }
 }

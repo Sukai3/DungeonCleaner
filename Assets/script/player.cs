@@ -43,6 +43,13 @@ public class player : MonoBehaviour
     public AudioClip sound1;
     AudioSource audioSource;
 
+    //public Sprite Iup;
+    //public Sprite Idown;
+    //public Sprite Iright;
+    //public Sprite Ileft;
+
+    //SpriteRenderer rend;
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
