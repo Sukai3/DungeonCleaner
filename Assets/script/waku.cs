@@ -98,6 +98,7 @@ public class waku : MonoBehaviour
                 if (takara[i] == player.hit)
                 {
                 //anime
+               // transform.position = new Vector3(player.hit.transform.position.x, player.hit.transform.position.y - 1.0f, transform.position.z); ;
                 transform.localScale = new(scax*1.3f,scay*1.5f,transform.localScale.z);
                     anim.SetTrigger("takara");
                 anim.SetBool("Gaikotub", false);
@@ -113,7 +114,7 @@ public class waku : MonoBehaviour
             if (kan[i] == player.hit)
             {
                 //anime
-                transform.position = new Vector3(player.hit.transform.position.x, player.hit.transform.position.y - 1.0f, transform.position.z); ;
+               
 
                 transform.localScale = new(scax, scay, transform.localScale.z);
                 anim.SetTrigger("takara");
