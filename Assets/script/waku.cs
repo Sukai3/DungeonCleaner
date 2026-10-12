@@ -7,6 +7,7 @@ public class waku : MonoBehaviour
     public GameObject[] hasonbox;
     public GameObject[] box;
     public GameObject[] takara;
+    public GameObject[] kan;
     private Animator anim;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -29,7 +30,8 @@ public class waku : MonoBehaviour
                 anim.SetBool("Boxb",false);
                 anim.SetBool("Takarab",false);
                 anim.SetBool("Enptyb",false);
-             
+                anim.SetBool("Kanb", false);
+
             }
             
         }
@@ -45,6 +47,7 @@ public class waku : MonoBehaviour
                 anim.SetBool("Boxb", false);
                 anim.SetBool("Takarab", false);
                 anim.SetBool("Enptyb", false);
+                anim.SetBool("Kanb", false);
             }
         }
         for (int i = 0; i < box.Length; i++)
@@ -58,6 +61,7 @@ public class waku : MonoBehaviour
                 anim.SetBool("Boxb", true);
                 anim.SetBool("Takarab", false);
                 anim.SetBool("Enptyb", false);
+                anim.SetBool("Kanb", false);
             }
         }
        
@@ -72,8 +76,23 @@ public class waku : MonoBehaviour
                 anim.SetBool("Boxb", false);
                 anim.SetBool("Takarab", true);
                 anim.SetBool("Enptyb", false);
+                anim.SetBool("Kanb", false);
             }
             }
+        for (int i = 0; i < kan.Length; i++)
+        {
+            if (kan[i] == player.hit)
+            {
+                //anime
+                anim.SetTrigger("takara");
+                anim.SetBool("Gaikotub", false);
+                anim.SetBool("Hboxb", false);
+                anim.SetBool("Boxb", false);
+                anim.SetBool("Takarab", false);
+                anim.SetBool("Kanb", true);
+                anim.SetBool("Enptyb", false);
+            }
+        }
 
         if (player.hit == null)
         {
@@ -85,6 +104,7 @@ public class waku : MonoBehaviour
             anim.SetBool("Boxb", false);
             anim.SetBool("Takarab", false);
             anim.SetBool("Enptyb", true);
+            anim.SetBool("Kanb", false);
         }
         else
         {
