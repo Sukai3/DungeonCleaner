@@ -50,7 +50,7 @@ public class waku : MonoBehaviour
             {
                 transform.localScale = new(scax , scay , transform.localScale.z);
                 //anime
-                anim.SetTrigger("Gaikotu");
+                //anim.SetTrigger("Gaikotu");
                 anim.SetBool("Gaikotub",true);
                 anim.SetBool("Hbox",false);
                 anim.SetBool("Boxb",false);
@@ -83,7 +83,7 @@ public class waku : MonoBehaviour
             {
                 //anime
                 transform.localScale = new(scax, scay, transform.localScale.z);
-                anim.SetTrigger("Box");
+               // anim.SetTrigger("Box");
                 anim.SetBool("Gaikotub", false);
                 anim.SetBool("Hboxb", false);
                 anim.SetBool("Boxb", true);
@@ -100,7 +100,7 @@ public class waku : MonoBehaviour
                 //anime
                // transform.position = new Vector3(player.hit.transform.position.x, player.hit.transform.position.y - 1.0f, transform.position.z); ;
                 transform.localScale = new(scax*1.3f,scay*1.5f,transform.localScale.z);
-                    anim.SetTrigger("takara");
+                 //   anim.SetTrigger("takara");
                 anim.SetBool("Gaikotub", false);
                 anim.SetBool("Hboxb", false);
                 anim.SetBool("Boxb", false);
@@ -117,7 +117,7 @@ public class waku : MonoBehaviour
                
 
                 transform.localScale = new(scax, scay, transform.localScale.z);
-                anim.SetTrigger("takara");
+               // anim.SetTrigger("takara");
                 anim.SetBool("Gaikotub", false);
                 anim.SetBool("Hboxb", false);
                 anim.SetBool("Boxb", false);
