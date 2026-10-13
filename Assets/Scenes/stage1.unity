@@ -3741,6 +3741,10 @@ PrefabInstance:
       propertyPath: sonota
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 1943859484758504213, guid: 4234ad88d8e9c1046844bd697e315ef2, type: 3}
+      propertyPath: sonota
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2838520497748848027, guid: 4234ad88d8e9c1046844bd697e315ef2, type: 3}
       propertyPath: m_Sprite
       value: 
