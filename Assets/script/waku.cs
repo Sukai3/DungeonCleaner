@@ -29,17 +29,11 @@ public class waku : MonoBehaviour
             //anime
             //  anim.SetTrigger("empty");
             transform.localScale = new(scax, scay, transform.localScale.z);
-            GetComponent<SpriteRenderer>().enabled = false;
-            anim.SetBool("Gaikotub", false);
-            anim.SetBool("Hboxb", false);
-            anim.SetBool("Boxb", false);
-            anim.SetBool("Takarab", false);
-            anim.SetBool("Enptyb", true);
-            anim.SetBool("Kanb", false);
+         
         }
         else
         {
-            GetComponent<SpriteRenderer>().enabled = true;
+           
             transform.position = player.hit.transform.position;
         }
 
@@ -57,6 +51,7 @@ public class waku : MonoBehaviour
                 anim.SetBool("Takarab",false);
                 anim.SetBool("Enptyb",false);
                 anim.SetBool("Kanb", false);
+                GetComponent<SpriteRenderer>().enabled = true;
 
             }
             
@@ -75,6 +70,7 @@ public class waku : MonoBehaviour
                 anim.SetBool("Takarab", false);
                 anim.SetBool("Enptyb", false);
                 anim.SetBool("Kanb", false);
+                 GetComponent<SpriteRenderer>().enabled = true;
             }
         }
         for (int i = 0; i < box.Length; i++)
@@ -90,6 +86,7 @@ public class waku : MonoBehaviour
                 anim.SetBool("Takarab", false);
                 anim.SetBool("Enptyb", false);
                 anim.SetBool("Kanb", false);
+                GetComponent<SpriteRenderer>().enabled = true;
             }
         }
        
@@ -98,7 +95,7 @@ public class waku : MonoBehaviour
                 if (takara[i] == player.hit)
                 {
                 //anime
-               // transform.position = new Vector3(player.hit.transform.position.x, player.hit.transform.position.y - 1.0f, transform.position.z); ;
+                transform.position = new Vector3(player.hit.transform.position.x, player.hit.transform.position.y - 0.1f, transform.position.z); ;
                 transform.localScale = new(scax*1.3f,scay*1.5f,transform.localScale.z);
                  //   anim.SetTrigger("takara");
                 anim.SetBool("Gaikotub", false);
@@ -107,6 +104,7 @@ public class waku : MonoBehaviour
                 anim.SetBool("Takarab", true);
                 anim.SetBool("Enptyb", false);
                 anim.SetBool("Kanb", false);
+                GetComponent<SpriteRenderer>().enabled = true;
             }
             }
         for (int i = 0; i < kan.Length; i++)
@@ -124,9 +122,28 @@ public class waku : MonoBehaviour
                 anim.SetBool("Takarab", false);
                 anim.SetBool("Kanb", true);
                 anim.SetBool("Enptyb", false);
+                GetComponent<SpriteRenderer>().enabled = true;
             }
         }
+        if (player.hit == null)
+        {
+            //anime
+            //  anim.SetTrigger("empty");
+           // transform.localScale = new(scax, scay, transform.localScale.z);
+            GetComponent<SpriteRenderer>().enabled = false;
+            anim.SetBool("Gaikotub", false);
+            anim.SetBool("Hboxb", false);
+            anim.SetBool("Boxb", false);
+            anim.SetBool("Takarab", false);
+            anim.SetBool("Enptyb", true);
+            anim.SetBool("Kanb", false);
+        }
+        else
+        {
+           
+           // transform.position = player.hit.transform.position;
+        }
 
-      
+
     }
 }
