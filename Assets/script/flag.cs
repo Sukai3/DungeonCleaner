@@ -21,6 +21,8 @@ public class flag : MonoBehaviour
 
     public AudioClip soundgomi;
     public AudioClip soundoki;
+    public AudioClip kasu;
+    public AudioClip kuzu;
     AudioSource audioSource;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -70,6 +72,15 @@ public class flag : MonoBehaviour
                 okimono--;
                 audioSource.PlayOneShot(soundoki);
             }
+        }
+        if (collision.gameObject.CompareTag("kasu"))
+        {
+            audioSource.PlayOneShot(kasu);
+        }
+        if (collision.gameObject.CompareTag("kuzu"))
+        {
+           
+            audioSource.PlayOneShot(kuzu);
         }
 
     }
