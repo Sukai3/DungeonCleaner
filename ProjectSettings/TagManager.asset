@@ -26,6 +26,8 @@ TagManager:
   - boxup
   - boxdown
   - sonotafire
+  - kasu
+  - kuzu
   layers:
   - Default
   - TransparentFX

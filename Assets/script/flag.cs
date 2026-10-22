@@ -19,7 +19,7 @@ public class flag : MonoBehaviour
     private float time=3;
     public int max=7;
 
-    public AudioClip soundgomi;
+    //public AudioClip soundgomi;
     public AudioClip soundoki;
     public AudioClip kasu;
     public AudioClip kuzu;
@@ -63,7 +63,7 @@ public class flag : MonoBehaviour
         if (collision.gameObject.CompareTag("gomi"))
         {
             gomi--;
-            audioSource.PlayOneShot(soundgomi);
+           // audioSource.PlayOneShot(soundgomi);
         }
         if (collision.gameObject.CompareTag("okimono"))
         {
